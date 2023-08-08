@@ -1,0 +1,179 @@
+<!-- tag::allButValidation[] -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Patient Details</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+  </head>
+
+  <body>
+
+    <form method="POST"  th:object="${patient}">
+      <h1>Patient Registration Form</h1>
+
+<!-- end::allButValidation[] -->
+      <div th:if="${#fields.hasErrors()}">
+        <span class="validationError">
+        Please correct the problems below and resubmit.
+        </span>
+      </div>
+
+<!-- tag::allButValidation[] -->
+      <label for="patientName">Patient Name: </label>
+      <input type="text" th:field="*{patientName}"/>
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('patientName')}"
+            th:errors="*{patientName}">Name Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+      <label for="patientTel">Patient Telephone Number: </label>
+      <input type="text" th:field="*{patientTel}"/>
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('patientTel')}"
+            th:errors="*{patientTel}">Telephone Number Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+      <label for="patientDob">Patient Date of Birth: </label>
+      <input type="text" th:field="*{patientDob}"/>
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('patientDob')}"
+            th:errors="*{patientDob}">Date of Birth Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+      <label for="patientGender">Patient Gender: </label>
+      <input type="radio" th:field="*{patientGender}" th:value="MALE"> Male
+      <input type="radio" th:field="*{patientGender}" th:value="FEMALE"> Female
+
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('patientGender')}"
+            th:errors="*{patientGender}">Gender Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+      <label for="patientIdNumber">Patient ID Number: </label>
+      <input type="text" th:field="*{patientIdNumber}"/>
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('patientIdNumber')}"
+            th:errors="*{patientIdNumber}">ID Number Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+      <label for="patientMaritalStatus">Patient Marital Status: </label>
+      <input type="radio" th:field="*{patientMaritalStatus}" th:value="SINGLE"> Single
+      <input type="radio" th:field="*{patientMaritalStatus}" th:value="MARRIED"> Married
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('patientMaritalStatus')}"
+            th:errors="*{patientMaritalStatus}">Marital Status Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+      <label for="patientEmail">Patient Email: </label>
+      <input type="text" th:field="*{patientEmail}"/>
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('patientEmail')}"
+            th:errors="*{patientEmail}">Email Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+
+      <label for="patientAddress">Patient Address: </label>
+      <input type="text" th:field="*{patientAddress}"/>
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('patientAddress')}"
+            th:errors="*{patientAddress}">Address Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+      <label for="patientCounty">Patient County: </label>
+      <input type="text" th:field="*{patientCounty}"/>
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('patientCounty')}"
+            th:errors="*{patientCounty}">County Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+      <label for="patientSubcounty">Patient Subcounty: </label>
+      <input type="text" th:field="*{patientSubcounty}"/>
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('patientSubcounty')}"
+            th:errors="*{patientSubcounty}">Subcounty Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+      <h3>Next of Kin Details</h3>
+<!-- tag::validatedField[] -->
+      <label for="kinName">Kin Name: </label>
+      <input type="text" th:field="*{kinName}"/>
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('kinName')}"
+            th:errors="*{kinName}">Name Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+      <label for="kinTel">Kin Telephone Number: </label>
+      <input type="text" th:field="*{kinTel}"/>
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('kinTel')}"
+            th:errors="*{kinTel}">Telephone Number Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+      <label for="kinDob">Kin Date of Birth: </label>
+      <input type="text" th:field="*{kinDob}"/>
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('kinDob')}"
+            th:errors="*{kinDob}">Date of Birth Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+      <label for="kinGender">Kin Gender: </label>
+      <input type="radio" th:field="*{kinGender}" th:value="MALE"> Male
+      <input type="radio" th:field="*{kinGender}" th:value="FEMALE"> Female
+
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('kinGender')}"
+            th:errors="*{kinGender}">Gender Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+      <label for="kinIdNumber">Kin ID Number: </label>
+      <input type="text" th:field="*{kinIdNumber}"/>
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('kinIdNumber')}"
+            th:errors="*{kinIdNumber}">ID Number Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+      <label for="kinRelationship">Kin Relationship: </label>
+      <input type="text" th:field="*{kinRelationship}"/>
+<!-- end::allButValidation[] -->
+      <span class="validationError"
+            th:if="${#fields.hasErrors('kinRelationship')}"
+            th:errors="*{kinRelationship}">Relationship Error</span>
+<!-- tag::allButValidation[] -->
+      <br/>
+
+      <input type="submit" value="Submit Details"/>
+    </form>
+  </body>
+</html>
+<!-- end::allButValidation[] -->
